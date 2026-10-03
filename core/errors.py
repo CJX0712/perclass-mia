@@ -6,7 +6,7 @@ from __future__ import annotations
 
 
 class MIAError(Exception):
-    """所有 MIAForge 异常的基类。"""
+    """所有 PerClass-MIA 异常的基类。"""
 
     code = "E000"
 

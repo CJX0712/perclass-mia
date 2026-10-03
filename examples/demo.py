@@ -1,4 +1,4 @@
-"""MIAForge 端到端演示（作者：晨星）。
+"""PerClass-MIA 端到端演示（作者：晨星）。
 
 用法：
     python examples/demo.py            # 单 seed 演示 + 5 seed 基准 + DoD 性能门槛 + 确定性自检
@@ -98,7 +98,7 @@ def _determinism_check(cfg: Config, generators) -> bool:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MIAForge demo")
+    ap = argparse.ArgumentParser(description="PerClass-MIA demo")
     ap.add_argument("--quick", action="store_true", help="缩小规模快速验证")
     args = ap.parse_args()
 

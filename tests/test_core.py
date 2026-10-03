@@ -1,4 +1,4 @@
-"""MIAForge 单元测试（作者：晨星）。
+"""PerClass-MIA 单元测试（作者：晨星）。
 
 覆盖：
 - 指标口径：纯 numpy roc_auc / tpr_at_fpr 与 sklearn 一致

@@ -1,8 +1,8 @@
-# MIAForge — 免参考模型的成员推断攻击基准与旗舰攻击框架
+# PerClass-MIA — 免参考模型的成员推断攻击基准与旗舰攻击框架
 
 > 作者：晨星 · 纯 NumPy 实现 · 零构建 · 确定性可复现
 >
-> **一句话**：MIAForge 证明并量化了一件事——在"类难度异质"的目标模型上，
+> **一句话**：PerClass-MIA 证明并量化了一件事——在"类难度异质"的目标模型上，
 > **逐类参考归一化（LiRA 的核心直觉）可以在不训练任何参考模型的前提下**，
 > 显著击败全局阈值 / 全局 LR 等最强朴素基线。
 
@@ -19,9 +19,9 @@
 朴素做法：拿目标模型的 loss 或置信度当分数，画条全局阈值线。它有一个**结构性缺陷**——
 把"模型在难类上天生就高 loss"误判成"这是非成员"。
 
-**MIAForge 的旗舰攻击 ReferenceMIA** 用一条更便宜的路修掉这个缺陷：
+**PerClass-MIA 的旗舰攻击 ReferenceMIA** 用一条更便宜的路修掉这个缺陷：
 
-| | 经典 LiRA | MIAForge `ReferenceMIA` |
+| | 经典 LiRA | PerClass-MIA `ReferenceMIA` |
 |---|---|---|
 | 参考分布来源 | 训练 **N 个影子模型**（成本 N×） | 直接用 **non-member 集合**（成本 0） |
 | 归一化粒度 | 逐样本 × 逐类 | 逐**预测类** |
@@ -103,7 +103,7 @@ python -m pytest tests/ -q       # 14 项单元测试
 ## 5. 项目结构
 
 ```
-miaforge/
+perclass-mia/
 ├── core/           # 无业务依赖的底座
 │   ├── config.py       # 配置 + ENV_MIA_* 覆盖 + schema 校验
 │   ├── types.py        # Dataset / AttackResult / BenchmarkCell
@@ -133,7 +133,7 @@ miaforge/
 
 ## 6. 无泄漏保证
 
-成员推断评测最容易自欺的地方就是泄漏。MIAForge 有三道闸：
+成员推断评测最容易自欺的地方就是泄漏。PerClass-MIA 有三道闸：
 
 1. **目标模型只在 member 半上训练**；non-member 与 member 同源同分布，仅未参与训练。
 2. **攻击模型只在 attack-train 子集上拟合**，在 attack-test 子集上评分（按

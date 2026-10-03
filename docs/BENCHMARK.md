@@ -1,4 +1,4 @@
-# MIAForge 基准报告（作者：晨星）
+# PerClass-MIA 基准报告（作者：晨星）
 
 环境：Windows 11 / CPython 3.13.12 / numpy 2.5.3 / scikit-learn 1.9.1（仅口径校验）
 

@@ -1,4 +1,4 @@
-# MIAForge 使用手册（作者：晨星）
+# PerClass-MIA 使用手册（作者：晨星）
 
 ## 安装
 
