@@ -16,6 +16,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         python-version: ["3.11", "3.12", "3.13"]
 
+    env:
+      # Windows 控制台默认 cp1252，强制 UTF-8 输出
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: "1"
+
     steps:
       - uses: actions/checkout@v4
 

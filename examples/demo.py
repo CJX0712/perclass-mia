@@ -24,6 +24,13 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+# Windows 控制台默认 cp1252，中文与 ✅/❌ 会抛 UnicodeEncodeError —— 强制 UTF-8 输出
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
+    except (AttributeError, ValueError):
+        pass
+
 # 允许从仓库根目录直接运行（examples/ 在仓库内）
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
