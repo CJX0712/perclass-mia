@@ -1,0 +1,5 @@
+# 锁定依赖清单（生成环境：Windows 11 / CPython 3.13.12 / win-amd64）
+# 复现命令：python -m venv .venv && .venv/Scripts/pip install -r requirements.lock.txt
+numpy==2.5.3
+pytest==9.1.1
+scikit-learn==1.9.1

@@ -1,0 +1,33 @@
+{
+  "aggregate": {
+    "random": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5.0
+    },
+    "single_loss": {
+      "mean": 0.6785555555555555,
+      "std": 0.02437350185329537,
+      "n": 5.0
+    },
+    "naive_stacked_lr": {
+      "mean": 0.6799055555555557,
+      "std": 0.021647852230021337,
+      "n": 5.0
+    },
+    "reference_z_only": {
+      "mean": 0.7270666666666667,
+      "std": 0.019033325225398832,
+      "n": 5.0
+    },
+    "reference_mia": {
+      "mean": 0.7270666666666667,
+      "std": 0.019033325225398832,
+      "n": 5.0
+    }
+  },
+  "dod_passed": true,
+  "determinism_passed": true,
+  "flagship": "reference_mia",
+  "strong_baseline": "naive_stacked_lr"
+}
